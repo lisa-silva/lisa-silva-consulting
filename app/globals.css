@@ -17,22 +17,25 @@ body {
   color: var(--charcoal);
   background: var(--ivory);
   font-family: var(--font-manrope), sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: -0.008em;
 }
 
 ::selection { background: #cfe2dc; color: #073e3b; }
 
 @layer base {
-  h1, h2, h3, h4 { text-wrap: balance; }
+  h1, h2, h3, h4 { text-wrap: balance; letter-spacing: -0.035em; }
   p { text-wrap: pretty; }
   :focus-visible { @apply outline-none ring-2 ring-gold ring-offset-4 ring-offset-ivory; }
 }
 
 @layer components {
-  .container-site { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10; }
-  .section-pad { @apply py-20 sm:py-24 lg:py-28; }
-  .eyebrow { @apply mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-teal; }
-  .eyebrow::before { content: ""; @apply h-px w-7 bg-gold; }
-  .card { @apply rounded-3xl border border-teal/10 bg-white/80 shadow-card backdrop-blur-sm; }
+  .container-site { @apply mx-auto w-full max-w-[82rem] px-5 sm:px-8 lg:px-12 xl:px-16; }
+  .section-pad { @apply py-24 sm:py-32 lg:py-40; }
+  .eyebrow { @apply mb-5 inline-flex items-center gap-3 text-[0.68rem] font-extrabold uppercase tracking-[0.23em] text-teal; }
+  .eyebrow::before { content: ""; @apply h-px w-8 bg-gold; }
+  .card { @apply rounded-4xl border border-teal/[0.09] bg-white/80 shadow-card backdrop-blur-sm transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-teal/[0.16] hover:shadow-lift; }
   .link-arrow { @apply inline-flex items-center gap-2 font-bold text-teal transition-all hover:gap-3 hover:text-teal-dark; }
 }
 
@@ -43,8 +46,9 @@ body {
 
 .hero-glow {
   background:
-    radial-gradient(circle at 88% 20%, rgba(197, 139, 58, .18), transparent 24%),
-    radial-gradient(circle at 65% 65%, rgba(13, 92, 87, .15), transparent 32%);
+    radial-gradient(circle at 88% 20%, rgba(197, 139, 58, .14), transparent 26%),
+    radial-gradient(circle at 65% 65%, rgba(13, 92, 87, .11), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.45), transparent 72%);
 }
 
 .orb {

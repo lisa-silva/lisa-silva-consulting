@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRightIcon, BoltIcon, BuildingStorefrontIcon, ChatBubbleLeftRightIcon, EyeIcon, LightBulbIcon, MapIcon, PuzzlePieceIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { Button, FinalCTA, NumberBadge, SectionHeading } from "@/components/ui";
+import { Card, Stagger } from "@/components/primitives";
 
 export const metadata: Metadata = {
   title: "Business Systems Consultant",
@@ -41,9 +42,9 @@ export default function Home() {
 
     <section className="section-pad"><div className="container-site grid gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-start">
       <div className="lg:sticky lg:top-32"><SectionHeading eyebrow="What I do" title="Find the friction. Build the fix." copy="My work begins with careful observation. I look at how information moves, where people get stuck, and what the business is quietly asking for." /><Button href="/about" variant="outline" className="mt-8">How I think</Button></div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        {[{icon:EyeIcon,title:"See what’s unclear",copy:"I find the gaps that have become invisible because everyone is used to working around them."},{icon:MapIcon,title:"Map the whole system",copy:"People, tools, information, spaces, and customer moments all belong in the same picture."},{icon:BoltIcon,title:"Create practical changes",copy:"The answer might be a workflow, clearer content, a tool, an automation, or a physical design."},{icon:ChatBubbleLeftRightIcon,title:"Make it human",copy:"Good systems should reduce stress, make sense quickly, and work for the people actually using them."}].map(({icon:Icon,title,copy}) => <article key={title} className="card p-7"><span className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-light text-teal"><Icon className="h-6 w-6" /></span><h3 className="font-display text-2xl">{title}</h3><p className="mt-3 text-sm leading-7 text-charcoal/65">{copy}</p></article>)}
-      </div>
+      <Stagger className="grid gap-5 sm:grid-cols-2">
+        {[{icon:EyeIcon,title:"See what’s unclear",copy:"I find the gaps that have become invisible because everyone is used to working around them."},{icon:MapIcon,title:"Map the whole system",copy:"People, tools, information, spaces, and customer moments all belong in the same picture."},{icon:BoltIcon,title:"Create practical changes",copy:"The answer might be a workflow, clearer content, a tool, an automation, or a physical design."},{icon:ChatBubbleLeftRightIcon,title:"Make it human",copy:"Good systems should reduce stress, make sense quickly, and work for the people actually using them."}].map(({icon:Icon,title,copy}) => <Card key={title} className="p-8 sm:p-9"><span className="mb-10 flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-light text-teal"><Icon className="h-6 w-6" /></span><h3 className="font-display text-2xl">{title}</h3><p className="mt-4 text-sm leading-7 text-charcoal/60">{copy}</p></Card>)}
+      </Stagger>
     </div></section>
 
     <section className="section-pad bg-[#F2EEE5]"><div className="container-site"><SectionHeading eyebrow="Three consulting divisions" title="Different problems. One way of seeing." copy="Every division is grounded in the same idea: make the invisible visible, then make the system easier to trust." />

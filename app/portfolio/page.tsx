@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CpuChipIcon, LightBulbIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/outline";
-import { Button, FinalCTA, PageHero, SectionHeading } from "@/components/ui";
+import { Button, FinalCTA, PageHeader, SectionHeading } from "@/components/ui";
 
 export const metadata: Metadata = { title: "Portfolio", description: "Explore selected AI clarity, operational systems, and product innovation work by Lisa Silva." };
 
@@ -29,7 +29,7 @@ const groups = [
 ] as const;
 
 export default function PortfolioPage(){return <>
-  <PageHero eyebrow="Selected work" title="Ideas made practical." copy="My portfolio moves across AI, operations, products, and environments. The connecting thread is a real problem, observed closely, and a solution designed around how people actually live and work."><Button href="/contact">Discuss a project</Button></PageHero>
+  <PageHeader eyebrow="Selected work" title="Ideas made practical." copy="My portfolio moves across AI, operations, products, and environments. The connecting thread is a real problem, observed closely, and a solution designed around how people actually live and work."><Button href="/contact">Discuss a project</Button></PageHeader>
   <section className="py-8 border-b border-teal/10 bg-white/55"><div className="container-site flex flex-wrap gap-2">{groups.map((g,i)=><a key={g.title} href={`#category-${i+1}`} className="rounded-full border border-teal/15 bg-ivory px-4 py-2 text-xs font-bold text-teal transition-colors hover:bg-teal hover:text-white">{g.title}</a>)}</div></section>
   {groups.map((group, gi)=><section id={`category-${gi+1}`} key={group.title} className={`section-pad scroll-mt-24 ${gi%2===1?"border-y border-teal/10 bg-[#F2EEE5]":""}`}><div className="container-site"><div className="grid gap-8 lg:grid-cols-[.65fr_1.35fr]"><div><group.icon className="h-8 w-8 text-teal"/><p className="eyebrow mt-8">{group.eyebrow}</p><h2 className="font-display text-4xl sm:text-5xl">{group.title}</h2></div><div className="grid gap-4 sm:grid-cols-2">{group.projects.map(([title,copy,label],i)=><article key={title} className={`group rounded-3xl border border-teal/10 p-7 shadow-card transition-transform hover:-translate-y-1 ${gi===1?"bg-white/85":"bg-white/70"}`}><div className="flex items-center justify-between"><span className="rounded-full bg-teal-light px-3 py-1.5 text-[10px] font-bold uppercase tracking-[.12em] text-teal">{label}</span><span className="font-display text-xl text-gold">0{i+1}</span></div><h3 className="mt-8 font-display text-2xl leading-tight">{title}</h3><p className="mt-4 text-sm leading-7 text-charcoal/65">{copy}</p></article>)}</div></div></div></section>)}
   <section className="pb-6"><div className="container-site"><div className="rounded-4xl bg-gold-light/45 p-8 sm:p-12"><SectionHeading eyebrow="A note on innovation" title="Some work begins before there is a category for it." copy="These concepts are not exercises in novelty. Each starts with an overlooked user, a repeated frustration, or a physical environment that could serve people and animals more thoughtfully. Selected concepts are available for prototype development, licensing, manufacturing, and retail partnership."/><Button href="/contact" variant="outline" className="mt-8">Explore a partnership</Button></div></div></section>

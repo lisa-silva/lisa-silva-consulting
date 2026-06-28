@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CpuChipIcon, LightBulbIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/outline";
-import { Button, CheckList, FinalCTA, PageHero, SectionHeading } from "@/components/ui";
+import { Button, CheckList, FinalCTA, PageHeader } from "@/components/ui";
 
 export const metadata: Metadata = { title: "Consulting Services", description: "Explore Lisa Silva's AI clarity, operational consulting, and product and environment innovation services." };
 
@@ -11,7 +11,7 @@ const innovationAreas = ["Teacup Chihuahua lifestyle line","Carriers that attach
 function DivisionIntro({ number, icon:Icon, title, tagline, copy }: {number:string; icon:typeof CpuChipIcon; title:string; tagline:string; copy:string}) { return <div className="grid gap-7 lg:grid-cols-[.65fr_1.35fr]"><div><span className="text-xs font-bold tracking-[.2em] text-gold">DIVISION {number}</span><Icon className="mt-8 h-10 w-10 text-teal"/></div><div><h2 className="font-display text-4xl sm:text-5xl">{title}</h2><p className="mt-3 text-lg font-bold text-teal">{tagline}</p><p className="mt-5 max-w-2xl leading-8 text-charcoal/65">{copy}</p></div></div> }
 
 export default function ServicesPage(){return <>
-  <PageHero eyebrow="Consulting services" title="Clarity can take more than one shape." copy="Sometimes you need to understand how AI sees your business. Sometimes your team needs a better workflow. Sometimes the solution is a product or place no one has built yet."><Button href="/contact">Find the right starting point</Button></PageHero>
+  <PageHeader eyebrow="Consulting services" title="Clarity can take more than one shape." copy="Sometimes you need to understand how AI sees your business. Sometimes your team needs a better workflow. Sometimes the solution is a product or place no one has built yet."><Button href="/contact">Find the right starting point</Button></PageHeader>
   <section id="ai-clarity" className="section-pad scroll-mt-24"><div className="container-site"><DivisionIntro number="01" icon={CpuChipIcon} title="AI Clarity Consulting / AgentAirDirect" tagline="Control How AI Describes Your Business." copy="Understand the signals AI systems use to interpret your business, identify the gaps, and build a more complete, trustworthy picture." />
     <div className="mt-12 grid gap-5 lg:grid-cols-[1.25fr_.75fr]"><div className="card p-7 sm:p-9"><h3 className="font-display text-3xl">Services</h3><div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2"><CheckList items={aiServices.slice(0,5)}/><CheckList items={aiServices.slice(5)}/></div></div><aside className="rounded-3xl bg-teal p-7 text-white sm:p-9"><p className="text-xs font-bold uppercase tracking-[.18em] text-gold-light">Starting investment</p><p className="mt-6 font-display text-5xl">$1,500</p><p className="mt-2 font-bold">Signal Audit™</p><p className="mt-5 text-sm leading-6 text-white/65">Add-ons and expanded intelligence tools are priced per project.</p><Button href="/agentairdirect" variant="secondary" className="mt-7">View AgentAirDirect</Button></aside></div>
   </div></section>

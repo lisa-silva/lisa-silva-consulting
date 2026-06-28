@@ -3,6 +3,7 @@ import { Manrope, Newsreader } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import ScrollOrchestrator from "@/components/scroll-orchestrator";
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
 const newsreader = Newsreader({ subsets: ["latin"], variable: "--font-newsreader", display: "swap", style: ["normal", "italic"] });
@@ -15,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${manrope.variable} ${newsreader.variable} antialiased`}><SiteHeader /><main>{children}</main><SiteFooter /></body></html>;
+  return <html lang="en"><body className={`${manrope.variable} ${newsreader.variable} antialiased`}><SiteHeader /><ScrollOrchestrator /><main>{children}</main><SiteFooter /></body></html>;
 }

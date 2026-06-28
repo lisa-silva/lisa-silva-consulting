@@ -26,11 +26,13 @@ const config: Config = {
         display: ["var(--font-newsreader)", "serif"],
       },
       boxShadow: {
-        soft: "0 18px 45px rgba(31, 52, 48, 0.08)",
-        card: "0 8px 30px rgba(31, 52, 48, 0.07)",
+        soft: "0 32px 80px -24px rgba(18, 55, 51, 0.20)",
+        card: "0 16px 48px -24px rgba(18, 55, 51, 0.18), 0 2px 8px rgba(18, 55, 51, 0.04)",
+        lift: "0 28px 70px -24px rgba(18, 55, 51, 0.28), 0 4px 16px rgba(18, 55, 51, 0.06)",
       },
       borderRadius: {
-        "4xl": "2rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem",
       },
     },
   },
