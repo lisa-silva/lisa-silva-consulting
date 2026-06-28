@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import { ChatBubbleLeftRightIcon, ClockIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 import ContactForm from "@/components/contact-form";
 import { PageHeader } from "@/components/ui";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = { title: "Contact", description: "Contact Lisa Silva Consulting to discuss a Signal Audit, operational challenge, product concept, or clarity project." };
+export const metadata = pageMetadata("Contact", "Contact Lisa Silva Consulting to discuss a Signal Audit, operational challenge, product concept, or clarity project.", "/contact");
 
 export default function ContactPage(){return <>
-  <PageHeader eyebrow="Start a conversation" title="Let’s make things clearer." copy="You don’t need to diagnose the problem before you reach out. Tell me what’s happening, what feels stuck, or what you wish worked differently."/>
+  <PageHeader eyebrow="Start a conversation" title="Let’s Make Things Clearer." copy="You don’t need to diagnose the problem before you reach out. Tell me what’s happening, what feels stuck, or what you wish worked differently."/>
   <section className="section-pad"><div className="container-site grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:items-start"><div className="lg:sticky lg:top-32"><p className="eyebrow">What happens next</p><h2 className="font-display text-4xl sm:text-5xl">A thoughtful first step, without the sales theater.</h2><p className="mt-5 leading-8 text-charcoal/65">I’ll read your note carefully, consider what kind of clarity the situation needs, and respond with a useful next step.</p><div className="mt-9 space-y-4">{[
     [ChatBubbleLeftRightIcon,"A human response","Your inquiry goes to Lisa—not a scripted sales funnel."],
     [ClockIcon,"A focused conversation","We’ll use the first call to understand the problem and test the fit."],

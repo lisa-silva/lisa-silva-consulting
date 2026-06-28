@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { ArrowPathIcon, ChartBarSquareIcon, CheckBadgeIcon, CircleStackIcon, EyeIcon, MagnifyingGlassIcon, SignalIcon, SparklesIcon } from "@heroicons/react/24/outline";
-import { Button, CheckList, FinalCTA, NumberBadge, PageHero, SectionHeading } from "@/components/ui";
+import { Button, CheckList, FinalCTA, NumberBadge, SectionHeading } from "@/components/ui";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = { title: "AgentAirDirect", description: "Control how AI describes your business with AgentAirDirect Signal Audit™, schema intelligence, and AI clarity services." };
+export const metadata = pageMetadata("AgentAirDirect", "Control how AI describes your business with AgentAirDirect Signal Audit™, schema intelligence, and AI clarity services.", "/agentairdirect");
 
 const services = [
   [SignalIcon,"Signal Audit™","See how leading AI systems describe your business, where they disagree, and what important signals are missing."],

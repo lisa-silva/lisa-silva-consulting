@@ -9,7 +9,7 @@ export function Button({ href, children, variant = "primary", className = "" }: 
     secondary: "bg-gold text-white shadow-[0_12px_28px_-12px_rgba(197,139,58,.55)] hover:-translate-y-1 hover:bg-[#ad762b] hover:shadow-[0_18px_36px_-14px_rgba(197,139,58,.6)] active:translate-y-0",
     outline: "border border-teal/20 bg-white/50 text-teal shadow-sm backdrop-blur-sm hover:-translate-y-1 hover:border-teal/45 hover:bg-white hover:shadow-card active:translate-y-0",
   };
-  return <Link href={href} className={`group inline-flex min-h-13 items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[0.82rem] font-bold tracking-[-.01em] transition-all duration-300 ${styles[variant]} ${className}`}>{children}<ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /></Link>;
+  return <Link href={href} className={`group inline-flex min-h-[3.25rem] items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[0.82rem] font-bold tracking-[-.01em] transition-all duration-300 ${styles[variant]} ${className}`}>{children}<ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /></Link>;
 }
 
 export function SectionHeading({ eyebrow, title, copy, align = "left" }: { eyebrow: string; title: string; copy?: string; align?: "left" | "center" }) {

@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
 
-const field = "w-full rounded-2xl border border-teal/15 bg-white px-4 py-3.5 text-sm text-charcoal placeholder:text-charcoal/35 shadow-sm transition-colors hover:border-teal/30 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/10";
+const field = "w-full rounded-2xl border border-teal/10 bg-ivory/50 px-4 py-4 text-sm text-charcoal placeholder:text-charcoal/30 shadow-sm transition-all duration-300 hover:border-teal/25 hover:bg-white focus:border-teal/40 focus:bg-white focus:outline-none focus:ring-4 focus:ring-teal/[.06]";
 
 export default function ContactForm(){
   const [sent,setSent]=useState(false);
-  if(sent) return <div className="flex min-h-[520px] flex-col items-center justify-center rounded-4xl border border-teal/10 bg-white p-8 text-center shadow-card"><span className="flex h-16 w-16 items-center justify-center rounded-full bg-teal-light text-teal"><CheckCircleIcon className="h-9 w-9"/></span><h2 className="mt-7 font-display text-4xl">Your note is ready.</h2><p className="mt-4 max-w-md leading-7 text-charcoal/65">This demonstration form is working on the front end. Connect it to your preferred email or form service before launch to receive submissions.</p><button className="mt-7 text-sm font-bold text-teal underline underline-offset-4" onClick={()=>setSent(false)}>Send another note</button></div>;
-  return <form onSubmit={e=>{e.preventDefault();setSent(true)}} className="rounded-4xl border border-teal/10 bg-white p-6 shadow-soft sm:p-9"><div className="grid gap-5 sm:grid-cols-2">
+  if(sent) return <div aria-live="polite" className="flex min-h-[520px] flex-col items-center justify-center rounded-4xl border border-teal/10 bg-white p-8 text-center shadow-card"><span className="flex h-16 w-16 items-center justify-center rounded-full bg-teal-light text-teal"><CheckCircleIcon className="h-9 w-9"/></span><h2 className="mt-7 font-display text-4xl">Your note is ready.</h2><p className="mt-4 max-w-md leading-7 text-charcoal/65">This demonstration form is working on the front end. Connect it to your preferred email or form service before launch to receive submissions.</p><button className="mt-7 text-sm font-bold text-teal underline underline-offset-4" onClick={()=>setSent(false)}>Send another note</button></div>;
+  return <form onSubmit={e=>{e.preventDefault();setSent(true)}} className="rounded-5xl border border-teal/[.08] bg-white p-6 shadow-soft sm:p-10 lg:p-12"><div className="grid gap-6 sm:grid-cols-2">
     <label className="text-sm font-bold">Name <span className="text-gold">*</span><input className={`${field} mt-2`} name="name" autoComplete="name" required placeholder="Your name"/></label>
     <label className="text-sm font-bold">Business name<input className={`${field} mt-2`} name="business" autoComplete="organization" placeholder="Your business"/></label>
     <label className="text-sm font-bold">Phone<input className={`${field} mt-2`} name="phone" type="tel" autoComplete="tel" placeholder="(555) 000-0000"/></label>

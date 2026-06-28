@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { motion, type HTMLMotionProps, type Variants } from "framer-motion";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -34,7 +34,7 @@ export function Section({ children, className = "", container = true, innerClass
   return <section className={`section-pad relative ${className}`} {...props}>{container ? <div className={`container-site ${innerClassName}`}>{content}</div> : content}</section>;
 }
 
-type CardProps = ComponentPropsWithoutRef<"article"> & { children: ReactNode };
+type CardProps = HTMLMotionProps<"article"> & { children: ReactNode };
 
 export function Card({ children, className = "", ...props }: CardProps) {
   return <motion.article className={`card ${className}`} variants={itemVariants} whileHover={{ y: -6 }} transition={{ duration: .35, ease }} {...props}>{children}</motion.article>;

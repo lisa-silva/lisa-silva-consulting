@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { CpuChipIcon, LightBulbIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/outline";
 import { Button, CheckList, FinalCTA, PageHeader } from "@/components/ui";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = { title: "Consulting Services", description: "Explore Lisa Silva's AI clarity, operational consulting, and product and environment innovation services." };
+export const metadata = pageMetadata("Consulting Services", "Explore Lisa Silva’s AI clarity, operational consulting, and product and environment innovation services.", "/services");
 
 const aiServices = ["Signal Audit™","Signal Audit™ — Bulk Mode","Schema Intelligence","Website Trust & Readiness Review","Local Intent & Freshness Engine","AuditVoice™","Persona Engine","Agency Intelligence Dashboard™","Quote Calculator"];
 const operationServices = ["Inventory systems","Ordering systems","Workflow automation","Chatbot automation","Documentation clarity audits","Fraud-awareness audits","Customer experience redesign","Office automation","Environment design"];
